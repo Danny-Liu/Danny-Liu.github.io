@@ -103,13 +103,14 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/1-tomcat-folder.png">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/2-tomcat-users.png">
+<meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/2.1.png">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/3.png">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/4-maven-settings.png">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/5-project-pom.png">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/6-mvn.png">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/7.png">
 <meta property="og:image" content="http://github.com/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/8.png">
-<meta property="og:updated_time" content="2018-05-05T11:45:27.021Z">
+<meta property="og:updated_time" content="2018-05-05T13:11:07.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven Tomcat&#x63D2;&#x4EF6;&#x5BF9;Web&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x70ED;&#x90E8;&#x7F72;">
 <meta name="twitter:description" content="Maven Tomcat&amp;#x63D2;&amp;#x4EF6;&amp;#x5BF9;Web&amp;#x9879;&amp;#x76EE;&amp;#x8FDB;&amp;#x884C;&amp;#x70ED;&amp;#x90E8;&amp;#x7F72;&amp;#x2160;.&amp;#x672C;&amp;#x5730;&amp;#x73AF;&amp;#x5883;  IntelliJ IDEA 2018.1.1 apache-tomcat-8.5.29 apache-maven-3.5.3">
@@ -455,6 +456,11 @@
 </blockquote>
 <figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;admin-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;admin-script&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-gui&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-script&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-jmx&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">role</span> <span class="attr">rolename</span>=<span class="string">&quot;manager-status&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span> <span class="attr">name</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">password</span>=<span class="string">&quot;tomcat&quot;</span> <span class="attr">roles</span>=<span class="string">&quot;manager-gui,manager-script,manager-jmx,admin-script,admin-gui&quot;</span> /&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <img src="/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/2-tomcat-users.png">
+<blockquote>
+<p>&#x5728;tomcat_home/conf/Catalina/localhost&#x4E0B;&#xFF0C;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;manager.xml&#xFF0C;&#x914D;&#x7F6E;&#x8FDC;&#x7A0B;&#x8BBF;&#x95EE;manager</p>
+</blockquote>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Context</span> <span class="attr">privileged</span>=<span class="string">&quot;true&quot;</span> <span class="attr">antiResourceLocking</span>=<span class="string">&quot;false&quot;</span>   </span></span><br><span class="line"><span class="tag">         <span class="attr">docBase</span>=<span class="string">&quot;${catalina.home}/webapps/manager&quot;</span>&gt;</span>  </span><br><span class="line">             <span class="tag">&lt;<span class="name">Valve</span> <span class="attr">className</span>=<span class="string">&quot;org.apache.catalina.valves.RemoteAddrValve&quot;</span> <span class="attr">allow</span>=<span class="string">&quot;^.*$&quot;</span> /&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<img src="/2018/03/27/tomcat&#x70ED;&#x90E8;&#x7F72;/2.1.png">
 <blockquote>
 <p><strong>&#x914D;&#x7F6E;&#x8BF4;&#x660E;&#xFF1A;</strong></p>
 <p>manager-gui&#xFF1A;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;html&#x63A5;&#x53E3;(&#x5373;URL&#x8DEF;&#x5F84;&#x4E3A;/manager/html/)<br>manager-script&#xFF1A;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x7EAF;&#x6587;&#x672C;&#x63A5;&#x53E3;(&#x5373;URL&#x8DEF;&#x5F84;&#x4E3A;/manager/text/)<br>manager-jmx&#xFF1A;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;JMX&#x4EE3;&#x7406;&#x63A5;&#x53E3;(&#x5373;URL&#x8DEF;&#x5F84;&#x4E3A;/manager/jmxproxy/)<br>manager-status&#xFF1A;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;Tomcat&#x53EA;&#x8BFB;&#x72B6;&#x6001;&#x9875;&#x9762;(&#x5373;URL&#x8DEF;&#x5F84;&#x4E3A;/manager/status/)</p>
@@ -815,7 +821,7 @@ var jiathis_config={
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;538&#x5B57;</span>
+  <span class="post-count">&#x535A;&#x5BA2;&#x5168;&#x7AD9;&#x5171;580&#x5B57;</span>
 </div>
 
 
